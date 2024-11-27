@@ -6,7 +6,7 @@ class Estoque:
         # Controle da criação de instância única
         if not cls._instancia:
             cls._instancia = super(Estoque, cls).__new__(cls, *args, **kwargs)
-            cls._instancia.produtos = {}  # Inicializa o estoque de produtos
+            cls._instancia.produtos = {}
         return cls._instancia
 
     def adicionar_produto(self, produto, quantidade):
@@ -21,7 +21,6 @@ class Estoque:
         if nome_produto in self.produtos:
             if self.produtos[nome_produto]["quantidade"] >= quantidade:
                 self.produtos[nome_produto]["quantidade"] -= quantidade
-                # Remove o produto se a quantidade chegar a zero
                 if self.produtos[nome_produto]["quantidade"] == 0:
                     del self.produtos[nome_produto]
                 return True

@@ -44,20 +44,15 @@ def registrar_vendas(transacao):
             break
 
 if __name__ == "__main__":
-    # Criando o estoque (Singleton)
     estoque = Estoque()
 
-    # Adicionando produtos dinamicamente
     adicionar_produtos(estoque)
 
-    # Listando produtos no estoque
     print("\nProdutos adicionados ao estoque:")
     estoque.listar_produtos()
 
-    # Registrando vendas dinamicamente
     transacao = Transacao()
     registrar_vendas(transacao)
 
-    # Listando estoque atualizado
     print("\nEstoque atualizado após vendas:")
     estoque.listar_produtos()

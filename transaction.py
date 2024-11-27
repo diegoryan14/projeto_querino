@@ -27,8 +27,8 @@ class Transacao:
     def __init__(self):
         self.estoque = Estoque()  # Padrão Singleton: Obtém a instância única de Estoque.
 
-    @imposto_transacao(5)  # Primeiro aplica impostos
-    @desconto_transacao(10)  # Depois aplica desconto
+    @imposto_transacao(5)
+    @desconto_transacao(10)
     def registrar_venda(self, nome_produto, quantidade, preco):
         """Registra uma venda de um produto."""
         if self.estoque.remover_produto(nome_produto, quantidade):
